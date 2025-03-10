@@ -5,7 +5,7 @@ from PIL import Image
 from flask_cors import CORS
 from google import genai
 
-client = genai.Client(os.environ.get('GEMINI_API'))
+client = genai.Client(api_key=os.environ.get('GEMINI_API'))
 
 app = Flask(__name__)
 

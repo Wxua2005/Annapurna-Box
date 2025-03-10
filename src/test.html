@@ -386,10 +386,14 @@
                 <div class="image-container">
                     <img id="uploadedImage" src="" alt="Uploaded food image">
                     
-                    <!-- New status image container -->
                     <div class="status-image-container" id="status-container">
                         <img id="statusImage" src="" alt="Food Quality Status" class="status-image">
                         <p id="statusText" class="status-text">Status</p>
+                    </div>
+                    
+                    <!-- Add Find Nearest Drop-off button -->
+                    <div class="next-action-container" id="next-action" style="display: none; margin-top: 20px;">
+                        <a href="map.html" class="upload-btn" style="text-decoration: none;">Find Nearest Drop-off Location</a>
                     </div>
                 </div>
                 <div class="data-container">
@@ -436,6 +440,10 @@
             </div>
         </section>
     </div>
+    
+    <!-- <footer class="footer">
+        <p>&copy; 2025 FoodQuality AI. All rights reserved.</p>
+    </footer> -->
 
     <script>
         const fileInput = document.getElementById('fileInput');
@@ -542,6 +550,8 @@
                                 statusImage.src = '../assets/thumb-up.png';
                                 statusText.textContent = 'Food Approved';
                                 statusText.className = 'status-text good';
+                                
+                                document.getElementById('next-action').style.display = 'block';
                             } else if (quality === 'unhealthy' || quality === 'bad' || quality.includes("can't determine")) {
                                 statusImage.src = '../assets/thumb-down.png';
                                 statusText.textContent = 'Food Not Recommended';
